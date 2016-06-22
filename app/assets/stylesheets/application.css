@@ -16,7 +16,26 @@
  *= require fullcalendar
  */
 
+/* 共通 */
 body {
-  /*test*/
-  line-height: 1.5;
+  font-size: 90%;
+  background-color: #efefef;
+  color: #333;
 }
+h1 { font-size: 2.4em; }
+h2 { font-size: 1.6em; }
+
+
+/* 基本レイアウト */
+#body {
+  margin: 100px auto; /* 中央寄せ */
+  padding: 0 50px;
+  width: 90%;
+  background-color: #ffffff;
+}
+
+#footer {
+  margin: 25px 0;
+  text-align: right;
+}
+#footer p { font-size: 0.8em; }

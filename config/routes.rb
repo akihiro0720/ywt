@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :reports
   # 最初にアクセスされる画面はapplication_controllerのindex
   root 'application#index'
 

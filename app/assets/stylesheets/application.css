@@ -25,10 +25,15 @@ body {
 h1 { font-size: 2.4em; }
 h2 { font-size: 1.6em; }
 
+/* ログインメニュー */
+/*#navbar-text pull-right {
+  margin: 100px auto; /* 中央寄せ */
+/*}*/
+
 
 /* 基本レイアウト */
 #body {
-  margin: 100px auto; /* 中央寄せ */
+  margin-right: 100; /* 中央寄せ */
   padding: 0 50px;
   width: 90%;
   background-color: #ffffff;
@@ -39,3 +44,15 @@ h2 { font-size: 1.6em; }
   text-align: right;
 }
 #footer p { font-size: 0.8em; }
+
+/* ナビゲーションバーのログイン関係 */
+.navbar a.brand { font-size: 18px; }
+.navbar a.brand:hover {
+  color: #fff;
+  background-color: transparent;
+  text-decoration: none;
+}
+.navbar {
+  min-height: 60px;
+  background-color: #003472;
+}

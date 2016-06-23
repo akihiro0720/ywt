@@ -2,7 +2,7 @@ class CreateReports < ActiveRecord::Migration
   def change
     create_table :reports do |t|
       t.integer :user_id
-      t.string :date
+      t.Date :date
       t.string :y
       t.string :w
       t.string :t

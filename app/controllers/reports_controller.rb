@@ -5,6 +5,7 @@ class ReportsController < ApplicationController
   # GET /reports.json
   def index
     @reports = Report.all
+    #@comment = @reports.comments.build
   end
 
   # GET /reports/1

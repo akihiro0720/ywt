@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
-  before_action :set_report, only: [:show, :edit, :update, :destroy]
+  #before_action :set_report, only: [:show, :edit, :update, :destroy]
+  #
 
   # GET /reports
   # GET /reports.json
@@ -62,6 +63,12 @@ class ReportsController < ApplicationController
     end
   end
 
+
+  def daily_reports
+    @reports = Report.where( date: '2016-06-23' )
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_report
@@ -72,4 +79,5 @@ class ReportsController < ApplicationController
     def report_params
       params.require(:report).permit(:user_id, :date, :y, :w, :t, :draft)
     end
+
 end

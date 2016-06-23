@@ -17,3 +17,8 @@
 //= require fullcalendar
 //= require_tree .
 
+$( document ).on( 'ready page:load', function()
+{
+  /*$( 'form' ).addClass( 'form-group' );
+  $( 'input' ).addClass( 'form-control' );*/
+});

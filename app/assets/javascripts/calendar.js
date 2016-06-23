@@ -30,7 +30,7 @@ $( '#calendar' ).fullCalendar({
   dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
   // 日付クリックイベント
   dayClick: function( date ) {
-    alert( 'Clicked on "' + date.format() + '"' );
+    window.location = "reports/daily_reports/?day=" + date.format();
   }
 });
 

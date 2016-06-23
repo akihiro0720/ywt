@@ -39,6 +39,13 @@
 </nav>
 <!-- ナビゲーションバー -->
 
+<% if notice %>
+<div class="alert alert-success content-block"><%= notice %></div>
+<% end %>
+<% if alert %>
+<div class="alert alert-danger content-block"><%= alert %></div>
+<% end %>
+
 <!-- コンテンツ -->
 <div class="container panel content-block" id="body">
 <%= yield %>

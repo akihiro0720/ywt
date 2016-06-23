@@ -31,7 +31,7 @@ h2 { font-size: 1.6em; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-.content_block {
+.content-block {
   margin: 0 auto; /* ブロックを中央寄せ */
   width: 90%; /* ウィンドウ幅の90% */
 }
@@ -46,7 +46,26 @@ a:hover { text-decoration: underline; }
 
 
 /* カレンダー */
-.fc-day-header { background-color: #edffbe/*#ffe4e1*/; }
+#calendar { padding-top: 25px; clear: left; }
+#cal-header ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#cal-header ul li {
+  margin-right: 15px;
+  float: left;
+}
+#cal-header ul li a {
+  background-color: #87ceeb;
+  color: #333 !important;
+}
+#cal-header ul li a:hover {
+  background-color: #00bfff !important;
+  text-decoration: none;
+  color: #fff !important;
+}
+.fc-day-header { background-color: #edffbe; }
 /*.fc-past, .fc-today { cursor: pointer; }
 .fc-past:hover, .fc-today:hover { background-color: #f0f8ff !important; }
 .fc-other-month { cursor: default; }

@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
   # indexアクションを設定, カレンダー
   def index
     @reports = Report.all
+    gon.rep = @reports
   end
 end

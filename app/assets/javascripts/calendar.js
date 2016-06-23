@@ -1,4 +1,4 @@
-$(document).ready(function()
+$( document ).on( 'ready page:load', function()
 {
 
 $( '#calendar' ).fullCalendar({
@@ -30,7 +30,7 @@ $( '#calendar' ).fullCalendar({
   dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
   // 日付クリックイベント
   dayClick: function( date ) {
-    alert( 'Clicked on ' + date.format() );
+    alert( 'Clicked on "' + date.format() + '"' );
   }
 });
 

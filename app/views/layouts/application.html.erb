@@ -39,23 +39,14 @@
 </nav>
 <!-- ナビゲーションバー -->
 
-<!-- 警告 -->
-<% if notice %>
-<div class="alert alert-success content_block"><%= notice %></div>
-<% end %>
-<% if alert %>
-<div class="alert alert-danger content_block"><%= alert %></div>
-<% end %>
-<!-- 警告 -->
-
 <!-- コンテンツ -->
-<div class="container panel content_block" id="body">
+<div class="container panel content-block" id="body">
 <%= yield %>
 </div>
 <!-- コンテンツ -->
 
 <!-- フッター -->
-<footer class="content_block" id="footer">
+<footer class="content-block" id="footer">
   <p>日報管理システム <i class="fa fa-coffee" aria-hidden="true"></i>　&copy; 2016</p>
 </footer>
 <!-- フッター -->

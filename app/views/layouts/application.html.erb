@@ -2,12 +2,14 @@
 <html>
 
 <head><!-- // ヘッダ -->
-  <title>日報管理システム（仮）</title>
+  <title>日報管理システム</title>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 
+  <%= include_gon %>
+  <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,54 +21,44 @@
 <!-- ナビゲーションバー -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">日報管理システム（仮）</a>
+    <h1 class="navbar-header">
+      <a class="navbar-brand" href="/">日報管理システム <i class="fa fa-coffee" aria-hidden="true"></i></a>
+    </h1>
 
-      <p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-
+    <div class="navbar-text navbar-right">
+      <% if user_signed_in? %>
+        <strong><%= current_user.email %></strong>
+        <%= link_to 'プロフィール編集', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+      <% else %>
+        <%= link_to "サインアップ", new_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "ログイン", new_user_session_path, :class => 'navbar-link' %>
+      <% end %>
     </div>
   </div>
 </nav>
-
-
-
 <!-- ナビゲーションバー -->
 
-<!-- コンテンツ -->
-<div class="container panel" id="body">
-
-<!-- コントローラ内容 -->
+<!-- 警告 -->
 <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
+<div class="alert alert-success content_block"><%= notice %></div>
 <% end %>
 <% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
+<div class="alert alert-danger content_block"><%= alert %></div>
 <% end %>
+<!-- 警告 -->
+
+<!-- コンテンツ -->
+<div class="container panel content_block" id="body">
 <%= yield %>
-<!-- コントローラ内容 -->
-
-<!-- フッター -->
-<footer id="footer">
-  <p>日報管理システム　&copy; 2016</p>
-</footer>
-<!-- フッター -->
-
 </div>
 <!-- コンテンツ -->
+
+<!-- フッター -->
+<footer class="content_block" id="footer">
+  <p>日報管理システム <i class="fa fa-coffee" aria-hidden="true"></i>　&copy; 2016</p>
+</footer>
+<!-- フッター -->
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body><!-- // 本体 -->

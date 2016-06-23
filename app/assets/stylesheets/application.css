@@ -14,41 +14,56 @@
  *= require_self
  *
  *= require fullcalendar
+ *= require font-awesome
  */
+
 
 /* 共通 */
 body {
   font-size: 90%;
   background-color: #efefef;
   color: #333;
+  padding-top: 100px; /* ナビゲーションバー表示のため */
 }
+h1, h2 { margin: 0; } /* マージンのリセット */
 h1 { font-size: 2.4em; }
 h2 { font-size: 1.6em; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-
-/* 基本レイアウト */
-#body {
-  margin: 100px auto; /* 中央寄せ */
-  padding: 0 50px;
-  width: 90%;
-  background-color: #ffffff;
+.content_block {
+  margin: 0 auto; /* ブロックを中央寄せ */
+  width: 90%; /* ウィンドウ幅の90% */
 }
-
-#footer {
-  margin: 25px 0;
-  text-align: right;
-}
-#footer p { font-size: 0.8em; }
 
 
 /* ナビゲーションバー */
-.navbar { min-height: 60px; }
+.navbar-text a:hover { background-color: transparent !important; }
+
+
+/* 警告 */
+.alert { margin-bottom: 50px; }
 
 
 /* カレンダー */
-.fc-past, .fc-today { cursor: pointer; }
-.fc-past:hover { background-color: #f0f8ff; }
+.fc-day-header { background-color: #edffbe/*#ffe4e1*/; }
+/*.fc-past, .fc-today { cursor: pointer; }
+.fc-past:hover, .fc-today:hover { background-color: #f0f8ff !important; }
 .fc-other-month { cursor: default; }
-.fc-other-month:hover { background-color: transparent; }
+.fc-other-month:hover { background-color: transparent !important; }*/
+
+
+/* 本体 */
+#body {
+  padding: 25px;
+  background-color: #fff;
+}
+#body h2 { margin-bottom: 15px; }
+
+#footer { padding: 25px 0 50px 0; }
+#footer p {
+  padding-right: 15px;
+  font-size: 0.8em;
+  color: #666;
+  text-align: right;
+}

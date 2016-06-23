@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-  # indexアクションを設定
+  # indexアクションを設定, カレンダー
   def index
+    @reports = Report.all
   end
 end

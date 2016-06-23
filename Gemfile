@@ -52,5 +52,11 @@ group :development do
   # calendar
   gem 'fullcalendar-rails'
   gem 'momentjs-rails'
+
+  # font awesome
+  gem "font-awesome-rails"
+
+  # gon, Rails - Javascript
+  gem 'gon'
 end
 

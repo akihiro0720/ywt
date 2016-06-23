@@ -4,9 +4,12 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    #@reports = Report.find(params[:id])
-    @comments = Comment.all
+    logger.debug("miyataaaaaaaaaaa")
+    logger.debug(params[:report_id])
+    @reports = Report.find(params[:report_id])
+    @comments = Comment.where(:reports_id => params[:report_id])
     @comment = Comment.new
+    #@reports.comments.build
   end
 
   # GET /comments/1
@@ -30,7 +33,8 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        @comments.reports_id = params[:report_id]
+        format.html { redirect_to '/comments', notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }

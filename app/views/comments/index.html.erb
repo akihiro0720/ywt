@@ -1,19 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<h1>日報登録</h1>
+<h1>日報閲覧</h1>
 
-<h2>y (やったこと)</h2>
-<%#= @reports.y %>
+<h2><b>y (やったこと)</b></h2>
+<div class="rep_y">
+<%= @reports.y %>
+</div>
 
-<h2>w (わかったこと)</h2>
-<%#= @reports.w %>
+<h2><b>w (わかったこと)</b></h2>
+<div class="rep_w">
+<%= @reports.w %>
+</div>
 
-<h2>t (次にやること)</h2>
-<%#= @reports.t %>
+<h2><b>t (次にやること)</b></h2>
+<div class="rep_t">
+<%= @reports.t %>
+</div>
+
 
 <h4 class="comment_disp">Comments</h4>
 <div class="comment_list">
     <div class="comment_head"><b>Name Comment</b></div>
+ <%if @comments then %>
  <% @comments.each do |comment| %>
   <div class="comment">
     <span class="comment_name"><%= comment.commented_user %></span>
@@ -21,6 +29,7 @@
     <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
     <% end %>
+  <%end%>
 </div>
 
 <%= render 'form' %>

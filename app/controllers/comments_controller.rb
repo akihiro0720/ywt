@@ -4,7 +4,9 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
+    #@reports = Report.find(params[:id])
     @comments = Comment.all
+    @comment = Comment.new
   end
 
   # GET /comments/1
